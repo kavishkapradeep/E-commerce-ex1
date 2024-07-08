@@ -49,4 +49,12 @@
     color: white;
     font-size: 22px;
     font-weight:500; 
+    cursor: pointer;
+}
+
+.hero-right{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
