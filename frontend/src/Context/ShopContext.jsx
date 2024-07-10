@@ -5,7 +5,11 @@ import { createContext } from 'react'
 export const ShopContext =createContext(null)
 
 const ShopContextProvider = (props) =>{
-    const  contextValue ={all_product}
+    const  contextValue ={all_product};
+
+    const getDefaultCart =()=>{
+        
+    }
 
     return (
         <ShopContext.Provider value={contextValue}>

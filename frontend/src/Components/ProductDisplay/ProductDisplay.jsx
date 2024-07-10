@@ -2,6 +2,7 @@ import React from 'react'
 import './ProductDisplay.css'
 import star_icon from '../Assets/Frontend_Assets/star_icon.png'
 import star_dull_icon from '../Assets/Frontend_Assets/star_dull_icon.png'
+
 const ProductDisplay = (props) => {
     const {product} =props;
   return (
@@ -54,6 +55,7 @@ const ProductDisplay = (props) => {
             <p className="productdisplay-right-category">
                 <span>Tags :</span> Modern,Latest
             </p>
+            
         </div>
     </div>
   )
