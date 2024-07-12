@@ -38,9 +38,10 @@ const ProductDisplay = (props) => {
                     <div className="productdisplay-right-price-now">
                         ${product.new_price}
                     </div>
-                    <div className="productdisplay-right-description">
+                    
+                    </div><div className="productdisplay-right-description">
                         Classic and comfortable, this shirt is perfect for any occasion. Made from high-quality materials, it offers a stylish fit with a timeless design. Ideal for both casual and formal wear, this versatile piece is a wardrobe essentia</div>
-                </div>
+                
                 <div className="productdisplay-right-size">
                     <h1>Select Size</h1>
                     <div className="productdisplay-right-sizes">
