@@ -4,6 +4,7 @@ import upload_area from '../../assets/upload_area.svg'
 import { useState } from 'react'
 const AddProduct = () => {
     const [image,setImage] =useState(false);
+
     const [productDetails,setProductDetails] =useState({
         name:"",
         image:"",
@@ -20,10 +21,32 @@ const AddProduct = () => {
         setProductDetails({...productDetails,[e.target.name]:e.target.value })
     }
 
-    const Add_Product = async ()=>{
-        console.log([productDetails])
-    }
+   const Add_Product =async()=>{
+        
+        let responseData;
+        let product =productDetails;
+            console.log(product)
+            
+        let formData =new FormData();
+        formData.append('product',image);
 
+        const response=await fetch('http://localhost:4000/upload',{
+            method:'POST',
+            headers:{Accept:'application/json'},
+            body:formData,
+        })
+
+        responseData =await response.json();
+        
+
+        if(responseData.sucess)
+        {
+            product.image = responseData.image_url;
+            console.log(product)
+        }
+       
+   }
+    
 
   return (
     <div className='add-product'>
@@ -56,7 +79,7 @@ const AddProduct = () => {
             </label>
             <input onChange={imageHandler} type="file" name="image" id="file-input" hidden />
         </div>
-        <button onClick={()=>{Add_Product()}} className='addproduct-btn' >ADD</button>  
+        <button onClick={()=>{Add_Product()}}  className='addproduct-btn' >ADD</button>  
     </div>
   )
 }
